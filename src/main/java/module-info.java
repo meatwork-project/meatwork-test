@@ -7,6 +7,7 @@ module com.meatwork.test {
 	requires com.google.guice;
 	requires org.junit.jupiter.api;
 	requires com.meatwork.tools;
+	requires jakarta.inject;
 
 	exports com.meatwork.test.api;
 }
