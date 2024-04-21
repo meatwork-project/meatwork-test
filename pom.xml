@@ -56,19 +56,6 @@
                 <configuration>
                     <skip>false</skip>
                 </configuration>
-                <executions>
-                    <execution>
-                        <id>deploy-tools</id>
-                        <phase>deploy</phase>
-                        <goals>
-                            <goal>deploy-file</goal>
-                        </goals>
-                        <configuration>
-                            <file>${project.basedir}/target/meatwork-test-${revision}.jar</file>
-                            <repositoryId>github</repositoryId>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
