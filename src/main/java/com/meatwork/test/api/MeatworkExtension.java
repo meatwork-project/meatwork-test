@@ -20,16 +20,6 @@ public class MeatworkExtension implements BeforeEachCallback {
 	public void beforeEach(ExtensionContext context) throws Exception {
 		List<Object> testInstances = context.getRequiredTestInstances().getAllInstances();
 		Object o = testInstances.get(0);
-		Class<?> aClass = o.getClass();
-
-		String[] arguments = null;
-		if (aClass.isAnnotationPresent(ApplicationArguments.class)) {
-			ApplicationArguments annotationsByType = aClass.getAnnotation(ApplicationArguments.class);
-			arguments = annotationsByType.value();
-		}
-
-		Application.run(arguments);
-
 
 		Field[] declaredFields = o
 				.getClass()
