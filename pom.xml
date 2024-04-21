@@ -66,7 +66,6 @@
                         <configuration>
                             <file>${project.basedir}/target/meatwork-test-${revision}.jar</file>
                             <repositoryId>github</repositoryId>
-                            <url>https://maven.pkg.github.com/meatwork-project/meatwork-test</url>
                         </configuration>
                     </execution>
                 </executions>
