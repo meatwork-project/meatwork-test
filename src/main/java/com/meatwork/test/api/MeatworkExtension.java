@@ -1,9 +1,7 @@
 package com.meatwork.test.api;
 
-import com.google.inject.Inject;
-import com.meatwork.tools.api.di.CDI;
-import com.meatwork.tools.api.service.Application;
-import org.junit.jupiter.api.extension.BeforeAllCallback;
+import com.meatwork.core.api.di.CDI;
+import jakarta.inject.Inject;
 import org.junit.jupiter.api.extension.BeforeEachCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
 
@@ -25,7 +23,7 @@ public class MeatworkExtension implements BeforeEachCallback {
 				.getClass()
 				.getDeclaredFields();
 		for (Field declaredField : declaredFields) {
-			if (!declaredField.isAnnotationPresent(Inject.class) && !declaredField.isAnnotationPresent(jakarta.inject.Inject.class)) {
+			if (!declaredField.isAnnotationPresent(Inject.class)) {
 				continue;
 			}
 
