@@ -4,9 +4,7 @@
  */
 module com.meatwork.test {
 
-	requires org.junit.jupiter.api;
 	requires com.meatwork.core;
-	requires jakarta.inject;
-
+	requires transitive org.junit.jupiter.api;
 	exports com.meatwork.test.api;
 }
