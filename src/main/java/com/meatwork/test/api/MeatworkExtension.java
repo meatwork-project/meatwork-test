@@ -1,6 +1,7 @@
 package com.meatwork.test.api;
 
 import com.meatwork.core.api.di.CDI;
+import com.meatwork.core.api.service.MeatworkApplication;
 import jakarta.inject.Inject;
 import org.junit.jupiter.api.extension.BeforeEachCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
@@ -16,8 +17,12 @@ import java.util.Set;
  */
 public class MeatworkExtension implements BeforeEachCallback {
 
+	@MeatworkApplication
+	private static class ApplicationTest {}
+
 	@Override
 	public void beforeEach(ExtensionContext context) throws Exception {
+		CDI.init(ApplicationTest.class);
 		List<Object> testInstances = context.getRequiredTestInstances().getAllInstances();
 		Object o = testInstances.getFirst();
 
